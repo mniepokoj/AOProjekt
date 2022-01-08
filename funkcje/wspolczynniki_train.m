@@ -141,13 +141,20 @@ function wsp = wspolczynniki_train()
 
 
 nn = feedforwardnet(50);
-nn.adaptFcn = 'adaptwb';
-nn.divideFcn = 'dividerand';
-nn.divideMode = 'sample';
-nn.layers{1}.transferFcn = 'logsig';
-nn.layers{2}.transferFcn = 'tansig';
-nn.trainFcn = 'trainlm';
-nn.performFcn = 'mse';
+nn.adaptFcn = 'trainscg';
+% 'adaptwb';
+nn.divideFcn =  'divideint';
+% 'dividerand';
+nn.divideMode = 'all';
+% 'sample';
+nn.layers{1}.transferFcn = 'tansig';
+% 'logsig';
+nn.layers{2}.transferFcn = 'logsig';
+% 'tansig';
+nn.trainFcn = 'traincgp';
+% 'trainlm';
+nn.performFcn = 'crossentropy';
+% 'mse';
 nn = train(nn,trainin,trainout);
 
 ocr_final_8_new = nn;
