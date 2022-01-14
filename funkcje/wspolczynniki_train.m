@@ -140,13 +140,13 @@ function wsp = wspolczynniki_train()
     
 
 %%factor double from 50 to 100
-nn = feedforwardnet(100);
+nn = feedforwardnet(12);
 nn.adaptFcn = 'adaptwb';
 nn.divideFcn = 'dividerand';
 nn.divideMode = 'sample';
 nn.layers{1}.transferFcn = 'logsig';
 nn.layers{2}.transferFcn = 'tansig';
-nn.trainFcn = 'trainlm';
+nn.trainFcn = 'trainbr';
 nn.performFcn = 'mse';
 nn = train(nn,trainin,trainout);
 
