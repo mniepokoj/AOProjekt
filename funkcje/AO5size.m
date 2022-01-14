@@ -3,6 +3,5 @@ function r = AO5size(im)
     im = regionprops(im, 'all');
     r = im.Centroid(2)/h;
     r = im.Eccentricity;
-    r = im.ConvexArea
-
+    r = im.ConvexArea;
 end
