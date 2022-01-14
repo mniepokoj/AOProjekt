@@ -13,7 +13,7 @@ function w = wczytaj(ids)
             for j = 1:length(fun)
                 binary_image = a(i).Image;
                 binary_image = padarray(binary_image,0);
-                binary_image = imresize(binary_image, [300, 300]);
+                binary_image = imresize(binary_image, [200, 200]);
                 w(x,j) =  fun{j}(binary_image);
             end
         end
