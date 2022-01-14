@@ -1,7 +1,7 @@
 function w = wczytaj(ids)
     len = get_length(ids);
     %%functions added, Feret deleted
-    fun = {@AO5RBlairBliss, @AO5RCircularityL, @AO5RCircularityS, @AO5RShape, @AO5RDanielsson, @AO5RHaralick, @AO5RMalinowska, @AO5TopEuler, @AO5BottomEuler,  @AO5Euler};
+    fun = {@AO5RBlairBliss, @AO5RCircularityL, @AO5RCircularityS, @AO5RShape, @AO5RDanielsson, @AO5RHaralick, @AO5RMalinowska, @AO5TopEuler, @AO5BottomEuler,  @AO5Euler, @Centroid2, @Eccentricity, @ConvexArea, @Solidity, @Extent, @Perimeter};
     w = zeros(len, length(fun));
     for x = 1:len
         img = double(readimage(ids, x))/255;

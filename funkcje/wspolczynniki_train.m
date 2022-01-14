@@ -182,7 +182,7 @@ function wsp = wspolczynniki_train()
     
 
 %%factor double from 50 to 100
-nn = feedforwardnet(12);
+nn = feedforwardnet(25);
 nn.adaptFcn = 'adaptwb';
 nn.divideFcn = 'dividerand';
 nn.divideMode = 'sample';
