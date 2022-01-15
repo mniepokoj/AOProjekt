@@ -39,6 +39,10 @@ function wsp = wspolczynniki_train()
     ids_div = imageDatastore('operations/oper_division');
     ids_multi = imageDatastore('operations/oper_multiplication');
     ids_sub = imageDatastore('operations/oper_subtraction');
+    ids_left_arr = imageDatastore('operations/oper_left_arrow');
+    ids_right_arr = imageDatastore('operations/oper_right_arrow');
+    ids_ln = imageDatastore('operations/oper_ln');
+    ids_expon = imageDatastore('operations/oper_exponentiation');
 
 %     wa = wczytaj(ids_a);
 %     wb = wczytaj(ids_b);
@@ -81,6 +85,10 @@ function wsp = wspolczynniki_train()
     wdiv = wczytaj(ids_div);
     wmulti = wczytaj(ids_multi);
     wsub = wczytaj(ids_sub);
+    wlarr = wczytaj(ids_left_arr);
+    wrarr = wczytaj(ids_right_arr);
+    wln = wczytaj(ids_ln);
+    wexp = wczytaj(ids_expon);
 
 %    trainin = [wa;wb;wc;wd;we;wf;wg;wh;wi;wj;wk;wl;wm;wn;wo;wp;wq;wr;ws;wt;wu;wv;ww;wx;wy;wz;w1;w2;w3;w4;w5;w6;w7;w8;w9]';
 %    trainin = [wa;w1;w2;w3;w4;w5;w6;w7;w8;w9;w0]';
