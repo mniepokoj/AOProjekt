@@ -41,7 +41,7 @@ function wsp = wspolczynniki_train()
     ids_sub = imageDatastore('operations/oper_subtraction');
     ids_left_arr = imageDatastore('operations/oper_left_arrow');
     ids_right_arr = imageDatastore('operations/oper_right_arrow');
-    ids_ln = imageDatastore('operations/oper_ln');
+%     ids_ln = imageDatastore('operations/oper_ln');
     ids_expon = imageDatastore('operations/oper_exponentiation');
 
 %     wa = wczytaj(ids_a);
@@ -87,13 +87,13 @@ function wsp = wspolczynniki_train()
     wsub = wczytaj(ids_sub);
     wlarr = wczytaj(ids_left_arr);
     wrarr = wczytaj(ids_right_arr);
-    wln = wczytaj(ids_ln);
+%     wln = wczytaj(ids_ln);
     wexp = wczytaj(ids_expon);
 
 %    trainin = [wa;wb;wc;wd;we;wf;wg;wh;wi;wj;wk;wl;wm;wn;wo;wp;wq;wr;ws;wt;wu;wv;ww;wx;wy;wz;w1;w2;w3;w4;w5;w6;w7;w8;w9]';
 %    trainin = [wa;w1;w2;w3;w4;w5;w6;w7;w8;w9;w0]';
 %    trainin = [w1;w2;w3;w4;w5;w6;w7;w8;w9;w0]';
-    trainin = [w1;w2;w3;w4;w5;w6;w7;w8;w9;w0;wadd;wdiv;wmulti;wsub]';
+    trainin = [w1;w2;w3;w4;w5;w6;w7;w8;w9;w0;wadd;wdiv;wmulti;wsub;wlarr;wrarr;wexp]';
 
 % 
 %     trainout = [repmat([1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], length_w(wa),1);
@@ -171,20 +171,23 @@ function wsp = wspolczynniki_train()
 %     ]';
 
 
- trainout = [repmat([1,0,0,0,0,0,0,0,0,0,0,0,0,0], length_w(w1),1);
-    repmat([0,1,0,0,0,0,0,0,0,0,0,0,0,0], length_w(w2),1);
-    repmat([0,0,1,0,0,0,0,0,0,0,0,0,0,0], length_w(w3),1);
-    repmat([0,0,0,1,0,0,0,0,0,0,0,0,0,0], length_w(w4),1);
-    repmat([0,0,0,0,1,0,0,0,0,0,0,0,0,0], length_w(w5),1);
-    repmat([0,0,0,0,0,1,0,0,0,0,0,0,0,0], length_w(w6),1);
-    repmat([0,0,0,0,0,0,1,0,0,0,0,0,0,0], length_w(w7),1);
-    repmat([0,0,0,0,0,0,0,1,0,0,0,0,0,0], length_w(w8),1);
-    repmat([0,0,0,0,0,0,0,0,1,0,0,0,0,0], length_w(w9),1);
-    repmat([0,0,0,0,0,0,0,0,0,1,0,0,0,0], length_w(w0),1);
-    repmat([0,0,0,0,0,0,0,0,0,0,1,0,0,0], length_w(wadd),1);
-    repmat([0,0,0,0,0,0,0,0,0,0,0,1,0,0], length_w(wdiv),1);
-    repmat([0,0,0,0,0,0,0,0,0,0,0,0,1,0], length_w(wmulti),1);
-    repmat([0,0,0,0,0,0,0,0,0,0,0,0,0,1], length_w(wsub),1);
+ trainout = [repmat([1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], length_w(w1),1);
+    repmat([0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], length_w(w2),1);
+    repmat([0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0], length_w(w3),1);
+    repmat([0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0], length_w(w4),1);
+    repmat([0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0], length_w(w5),1);
+    repmat([0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0], length_w(w6),1);
+    repmat([0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0], length_w(w7),1);
+    repmat([0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0], length_w(w8),1);
+    repmat([0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0], length_w(w9),1);
+    repmat([0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0], length_w(w0),1);
+    repmat([0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0], length_w(wadd),1);
+    repmat([0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0], length_w(wdiv),1);
+    repmat([0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0], length_w(wmulti),1);
+    repmat([0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0], length_w(wsub),1);
+    repmat([0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0], length_w(wlarr),1);
+    repmat([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0], length_w(wrarr),1);
+    repmat([0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1], length_w(wexp),1);
     ]';
 
 
