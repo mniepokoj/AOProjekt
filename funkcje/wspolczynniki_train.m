@@ -94,7 +94,7 @@ function wsp = wspolczynniki_train()
 %    trainin = [wa;w1;w2;w3;w4;w5;w6;w7;w8;w9;w0]';
 %    trainin = [w1;w2;w3;w4;w5;w6;w7;w8;w9;w0]';
     trainin = [w1;w2;w3;w4;w5;w6;w7;w8;w9;w0;wadd;wdiv;wmulti;wsub;wlarr;wrarr;wexp]';
-
+  
 % 
 %     trainout = [repmat([1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], length_w(wa),1);
 %     repmat([0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], length_w(wb),1);
