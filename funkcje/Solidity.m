@@ -1,4 +1,4 @@
 function r = Solidity(im)
-    im = regionprops(im, 'all');
+    im = regionprops(im, 'Solidity');
     r = im.Solidity;
 end

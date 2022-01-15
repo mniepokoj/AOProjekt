@@ -1,5 +1,5 @@
 function r = ConvexArea(im)
     [h, w] = size(im);
-    im = regionprops(im, 'all');
+    im = regionprops(im, 'ConvexArea');
     r = im.ConvexArea/(h*w);
 end

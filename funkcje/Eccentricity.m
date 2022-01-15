@@ -1,4 +1,4 @@
 function r = Eccentricity(im)
-    im = regionprops(im, 'all');
+    im = regionprops(im, 'Eccentricity');
     r = im.Eccentricity;
 end

@@ -80,6 +80,7 @@ function wsp = wspolczynniki_train()
     w8 = wczytaj(ids_8);
     w9 = wczytaj(ids_9);
     w0 = wczytaj(ids_0);
+
     wadd = wczytaj(ids_add);
     wdiv = wczytaj(ids_div);
     wmulti = wczytaj(ids_multi);
