@@ -1,6 +1,6 @@
 function wsp = wspolczynniki_train()
-     ids_x = imageDatastore('letters/x');
-     ids_y = imageDatastore('letters/y');
+    ids_x = imageDatastore('letters/x');
+    ids_y = imageDatastore('letters/y');
     ids_1 = imageDatastore('number/num_1');
     ids_2 = imageDatastore('number/num_2');
     ids_3 = imageDatastore('number/num_3');
