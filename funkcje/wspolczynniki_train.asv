@@ -82,6 +82,12 @@ function wsp = wspolczynniki_train()
     wmulti = wczytaj(ids_multi);
     wsub = wczytaj(ids_sub);
 
+    k1 = mean(w5);
+    k2 = mean(wmulti);
+    k3 = [k1; k2];
+    s = '2+2*(3-6+8';
+    m = str2num(s);
+
 %    trainin = [wa;wb;wc;wd;we;wf;wg;wh;wi;wj;wk;wl;wm;wn;wo;wp;wq;wr;ws;wt;wu;wv;ww;wx;wy;wz;w1;w2;w3;w4;w5;w6;w7;w8;w9]';
 %    trainin = [wa;w1;w2;w3;w4;w5;w6;w7;w8;w9;w0]';
 %    trainin = [w1;w2;w3;w4;w5;w6;w7;w8;w9;w0]';
