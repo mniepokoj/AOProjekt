@@ -84,15 +84,15 @@ function wsp = wspolczynniki_train()
     wdiv = wczytaj(ids_div);
     wmulti = wczytaj(ids_multi);
     wsub = wczytaj(ids_sub);
-    wlarr = wczytaj(ids_add);
-    wrarr = wczytaj(ids_div);
-    wln = wczytaj(ids_multi);
-    wsub = wczytaj(ids_sub);
+    wlarr = wczytaj(ids_left_arr);
+    wrarr = wczytaj(ids_right_arr);
+    wln = wczytaj(ids_ln);
+    wexp = wczytaj(ids_expon);
 
 %    trainin = [wa;wb;wc;wd;we;wf;wg;wh;wi;wj;wk;wl;wm;wn;wo;wp;wq;wr;ws;wt;wu;wv;ww;wx;wy;wz;w1;w2;w3;w4;w5;w6;w7;w8;w9]';
 %    trainin = [wa;w1;w2;w3;w4;w5;w6;w7;w8;w9;w0]';
 %    trainin = [w1;w2;w3;w4;w5;w6;w7;w8;w9;w0]';
-    trainin = [w1;w2;w3;w4;w5;w6;w7;w8;w9;w0;wadd;wdiv;wmulti;wsub]';
+    trainin = [w1;w2;w3;w4;w5;w6;w7;w8;w9;w0;wadd;wdiv;wmulti;wsub;wlarr;wrarr;wln;wexp]';
 
 % 
 %     trainout = [repmat([1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], length_w(wa),1);
