@@ -76,5 +76,5 @@ nn.performFcn = 'mse';
 nn = train(nn,trainin,trainout);
 
 new_neural_network = nn;
-save new_neural_netwoek;
+save new_neural_network;
 end
